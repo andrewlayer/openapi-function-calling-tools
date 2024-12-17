@@ -7,12 +7,18 @@ A set of tools that allows you to easily call OpenAPI functions using an LLM.  T
 
 ```json
 {
-  name: string;          // Unique identifier for the tool
-  description?: string;  // Human-readable description
-  inputSchema: {         // JSON Schema for the tool's parameters
-    type: "object",
-    properties: { ... }  // Tool-specific parameters
-  }
+    "name": "getPetById",
+    "description": "Retrieve a pet by its ID",
+    "inputSchema": {
+        "type": "object",
+        "properties": {
+            "petId": {
+                "type": "integer",
+                "description": "ID of the pet to retrieve"
+            }
+        },
+        "required": ["petId"]
+    }
 }
 ```
 
